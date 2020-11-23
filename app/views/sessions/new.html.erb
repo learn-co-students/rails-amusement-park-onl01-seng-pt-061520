@@ -1,0 +1,15 @@
+<%= form_tag signin_path do %>
+    <%= label_tag "Your Name:"%>
+    <%= select_tag "user[name]", options_from_collection_for_select(@users, "id", "name")%> <br>
+    <%= label_tag "Your Password:"%>
+    <%= password_field_tag "user[password]"%> <br>
+    <%= submit_tag "Sign In"%>
+<% end %>
+
+<%# <%= form_for @user do |f| %> %>
+<%# <%= f.label :name, "Your Name:" %> %>
+<%# <%= f.select :name,  options_from_collection_for_select(@users, "id", "name")%> <br> %>
+<%# <%= f.label :password, "Your Password:" %> <br> %>
+<%# <%= f.password_field :password %> <br> %>
+<%# <%= f.submit "Sign In"%> %>
+<%# <% end %> %>
