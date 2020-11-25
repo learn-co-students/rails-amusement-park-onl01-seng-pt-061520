@@ -1,0 +1,30 @@
+
+  <div>
+  <% @attractions.each do |attraction| %>
+
+  <div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Name</h2>
+    <p><%= attraction.name%></p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Tickets</h2>
+    <p><%= attraction.tickets%></p>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <h2>Link</h2>
+    <p>      <% if @current_user.admin %>
+    <%= link_to "Show #{attraction.name}", attraction_path(attraction) %>
+  <% else %>
+    <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
+  <% end %></p>
+  </div>
+</div>
+<% end %>
+
+</div>
+
+<% if @current_user.admin %>
+<%= link_to  "New Attraction", new_attraction_path %>
+
+<% end %>
